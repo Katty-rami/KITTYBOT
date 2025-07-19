@@ -9,18 +9,18 @@ import moment from 'moment-timezone'
 
 //─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 
-global.botNumber = '' //Ejemplo: 56983073328
+global.botNumber = '' //Ejemplo: 529862177201
 
 //─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 
 global.owner = [
-  ['56983073328', 'MvrcoSexo', true]
+  ['529862177201', 'MvrcoSexo', true]
 ];
 
 //─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 
 global.mods = []
-global.suittag = ['56983073328']
+global.suittag = ['529862177201']
 global.prems = []
 
 //─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
@@ -35,7 +35,7 @@ global.club = 'Mᴠʀᴄᴏ Sᴇxᴏ'
 global.textbot = 'Mᴠʀᴄᴏ Sᴇxᴏ'
 global.etiqueta = '@𝖎𝖓𝖊𝖋𝖋𝖆𝖇𝖑𝖊.𝖒𝖛𝖗𝖈𝖔'
 global.jadi = 'JadiBots'
-global.sessions = 'MvrcoSession'
+global.sessions = 'OceanSession'
 
 //─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 
@@ -69,12 +69,12 @@ global.github = 'https://github.com/KillzN/MvrcoSexo'
 global.grupo = 'https://chat.whatsapp.com/HqhAoXS8TCcJIn0KrbJZKz'
 global.comu = 'https://chat.whatsapp.com/Ehs4pdSEW4o9ub8G3SPVaT'
 global.channel = 'https://www.whatsapp.com/channel/0029Vb4TKBCD38CNEkfHdj1z'
-global.ig = 'https://www.instagram.com/ineffable.mvrco'
+global.ig = 'https://www.instagram.com/aure.vp'
 
 //─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 
 global.catalogo = fs.readFileSync('./src/catalogo.jpg');
-global.estilo = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "56983073328-120363046971143826@g.us" } : {}) }, message: { orderMessage: { itemCount: -999999, status: 1, surface: 1, message: 'Mvrco Sexo', orderTitle: 'Bang', thumbnail: catalogo, sellerJid: '0@s.whatsapp.net' } } }
+global.estilo = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "529862177201-120363046971143826@g.us" } : {}) }, message: { orderMessage: { itemCount: -999999, status: 1, surface: 1, message: 'Mvrco Sexo', orderTitle: 'Bang', thumbnail: catalogo, sellerJid: '0@s.whatsapp.net' } } }
 global.multiplier = 70
 
 //─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─

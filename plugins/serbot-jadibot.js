@@ -38,18 +38,18 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
   }
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
   let id = `${who.split`@`[0]}`
-  let pathMvrcoJadiBot = path.join(`./${jadi}/`, id)
-  if (!fs.existsSync(pathMvrcoJadiBot)) {
-    fs.mkdirSync(pathMvrcoJadiBot, { recursive: true })
+  let pathOceanJadiBot = path.join(`./${jadi}/`, id)
+  if (!fs.existsSync(pathOceanJadiBot)) {
+    fs.mkdirSync(pathOceanJadiBot, { recursive: true })
   }
-  MvrcoJBOptions.pathMvrcoJadiBot = pathMvrcoJadiBot
+  MvrcoJBOptions.pathOceanJadiBot = pathOceanJadiBot
   MvrcoJBOptions.m = m
   MvrcoJBOptions.conn = conn
   MvrcoJBOptions.args = args
   MvrcoJBOptions.usedPrefix = usedPrefix
   MvrcoJBOptions.command = command
   MvrcoJBOptions.fromCommand = true
-  MvrcoJadiBot(MvrcoJBOptions)
+  OceanJadiBot(MvrcoJBOptions)
   global.db.data.users[m.sender].Subs = new Date * 1
 }
 handler.help = ['qr', 'code']
@@ -57,8 +57,8 @@ handler.tags = ['serbot']
 handler.command = ['qr', 'code']
 export default handler
 
-export async function MvrcoJadiBot(options) {
-  let { pathMvrcoJadiBot, m, conn, args, usedPrefix, command } = options
+export async function OceanJadiBot(options) {
+  let { pathOceanJadiBot, m, conn, args, usedPrefix, command } = options
   if (command === 'code') {
     command = 'qr';
     args.unshift('code')
@@ -70,9 +70,9 @@ export async function MvrcoJadiBot(options) {
     if (args[1]) args[1] = args[1].replace(/^--code$|^code$/, "").trim()
     if (args[0] == "") args[0] = undefined
   }
-  const pathCreds = path.join(pathMvrcoJadiBot, "creds.json")
-  if (!fs.existsSync(pathMvrcoJadiBot)) {
-    fs.mkdirSync(pathMvrcoJadiBot, { recursive: true })
+  const pathCreds = path.join(pathOceanJadiBot, "creds.json")
+  if (!fs.existsSync(pathOceanJadiBot)) {
+    fs.mkdirSync(pathOceanJadiBot, { recursive: true })
   }
   try {
     args[0] && args[0] != undefined ? fs.writeFileSync(pathCreds, JSON.stringify(JSON.parse(Buffer.from(args[0], "base64").toString("utf-8")), null, '\t')) : ""
@@ -88,7 +88,7 @@ export async function MvrcoJadiBot(options) {
     let { version, isLatest } = await fetchLatestBaileysVersion()
     const msgRetry = (MessageRetryMap) => { }
     const msgRetryCache = new NodeCache()
-    const { state, saveState, saveCreds } = await useMultiFileAuthState(pathMvrcoJadiBot)
+    const { state, saveState, saveCreds } = await useMultiFileAuthState(pathOceanJadiBot)
 
     const connectionOptions = {
       logger: pino({ level: "fatal" }),
@@ -149,42 +149,42 @@ export async function MvrcoJadiBot(options) {
       const reason = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.error?.output?.payload?.statusCode
       if (connection === 'close') {
         if (reason === 428) {
-          console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ La conexión (+${path.basename(pathMvrcoJadiBot)}) fue cerrada inesperadamente. Intentando reconectar...\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
+          console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ La conexión (+${path.basename(pathOceanJadiBot)}) fue cerrada inesperadamente. Intentando reconectar...\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
           await creloadHandler(true).catch(console.error)
         }
         if (reason === 408) {
-          console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ La conexión (+${path.basename(pathMvrcoJadiBot)}) se perdió o expiró. Razón: ${reason}. Intentando reconectar...\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
+          console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ La conexión (+${path.basename(pathOceanJadiBot)}) se perdió o expiró. Razón: ${reason}. Intentando reconectar...\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
           await creloadHandler(true).catch(console.error)
         }
         if (reason === 440) {
-          console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ La conexión (+${path.basename(pathMvrcoJadiBot)}) fue reemplazada por otra sesión activa.\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
+          console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ La conexión (+${path.basename(pathOceanJadiBot)}) fue reemplazada por otra sesión activa.\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
           try {
-            if (options.fromCommand) m?.chat ? await conn.sendMessage(`${path.basename(pathMvrcoJadiBot)}@s.whatsapp.net`, { text: '*HEMOS DETECTADO UNA NUEVA SESIÓN, BORRE LA NUEVA SESIÓN PARA CONTINUAR*\n\n> *SI HAY ALGÚN PROBLEMA VUELVA A CONECTARSE*' }, { quoted: m || null }) : ""
+            if (options.fromCommand) m?.chat ? await conn.sendMessage(`${path.basename(pathOceanJadiBot)}@s.whatsapp.net`, { text: '*HEMOS DETECTADO UNA NUEVA SESIÓN, BORRE LA NUEVA SESIÓN PARA CONTINUAR*\n\n> *SI HAY ALGÚN PROBLEMA VUELVA A CONECTARSE*' }, { quoted: m || null }) : ""
           } catch (error) {
-            console.error(chalk.bold.yellow(`Error 440 no se pudo enviar mensaje a: +${path.basename(pathMvrcoJadiBot)}`))
+            console.error(chalk.bold.yellow(`Error 440 no se pudo enviar mensaje a: +${path.basename(pathOceanJadiBot)}`))
           }
         }
         if (reason == 405 || reason == 401) {
-          console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ La sesión (+${path.basename(pathMvrcoJadiBot)}) fue cerrada. Credenciales no válidas o dispositivo desconectado manualmente.\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
+          console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ La sesión (+${path.basename(pathOceanJadiBot)}) fue cerrada. Credenciales no válidas o dispositivo desconectado manualmente.\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
           try {
-            if (options.fromCommand) m?.chat ? await conn.sendMessage(`${path.basename(pathMvrcoJadiBot)}@s.whatsapp.net`, { text: '*SESIÓN PENDIENTE*\n\n> *INTENTÉ NUEVAMENTE VOLVER A SER SUB-BOT*' }, { quoted: m || null }) : ""
+            if (options.fromCommand) m?.chat ? await conn.sendMessage(`${path.basename(pathOceanJadiBot)}@s.whatsapp.net`, { text: '*SESIÓN PENDIENTE*\n\n> *INTENTÉ NUEVAMENTE VOLVER A SER SUB-BOT*' }, { quoted: m || null }) : ""
           } catch (error) {
-            console.error(chalk.bold.yellow(`Error 405 no se pudo enviar mensaje a: +${path.basename(pathMvrcoJadiBot)}`))
+            console.error(chalk.bold.yellow(`Error 405 no se pudo enviar mensaje a: +${path.basename(pathOceanJadiBot)}`))
           }
-          fs.rmdirSync(pathMvrcoJadiBot, { recursive: true })
+          fs.rmdirSync(pathOceanJadiBot, { recursive: true })
         }
         if (reason === 500) {
-          console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ Conexión perdida en la sesión (+${path.basename(pathMvrcoJadiBot)}). Borrando datos...\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
-          if (options.fromCommand) m?.chat ? await conn.sendMessage(`${path.basename(pathMvrcoJadiBot)}@s.whatsapp.net`, { text: '*CONEXIÓN PÉRDIDA*\n\n> *INTENTÉ MANUALMENTE VOLVER A SER SUB-BOT*' }, { quoted: m || null }) : ""
+          console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ Conexión perdida en la sesión (+${path.basename(pathOceanJadiBot)}). Borrando datos...\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
+          if (options.fromCommand) m?.chat ? await conn.sendMessage(`${path.basename(pathOceanJadiBot)}@s.whatsapp.net`, { text: '*CONEXIÓN PÉRDIDA*\n\n> *INTENTÉ MANUALMENTE VOLVER A SER SUB-BOT*' }, { quoted: m || null }) : ""
           return creloadHandler(true).catch(console.error)
         }
         if (reason === 515) {
-          console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ Reinicio automático para la sesión (+${path.basename(pathMvrcoJadiBot)}).\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
+          console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ Reinicio automático para la sesión (+${path.basename(pathOceanJadiBot)}).\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
           await creloadHandler(true).catch(console.error)
         }
         if (reason === 403) {
-          console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ Sesión cerrada o cuenta en soporte para la sesión (+${path.basename(pathMvrcoJadiBot)}).\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
-          fs.rmdirSync(pathMvrcoJadiBot, { recursive: true })
+          console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ Sesión cerrada o cuenta en soporte para la sesión (+${path.basename(pathOceanJadiBot)}).\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
+          fs.rmdirSync(pathOceanJadiBot, { recursive: true })
         }
       }
       if (global.db.data == null) loadDatabase()
@@ -192,8 +192,8 @@ export async function MvrcoJadiBot(options) {
         if (!global.db.data?.users) loadDatabase()
         let userName, userJid
         userName = sock.authState.creds.me.name || 'Anónimo'
-        userJid = sock.authState.creds.me.jid || `${path.basename(pathMvrcoJadiBot)}@s.whatsapp.net`
-        console.log(chalk.bold.cyanBright(`\n❒⸺⸺⸺⸺【• SUB-BOT •】⸺⸺⸺⸺❒\n│\n│ 🟢 ${userName} (+${path.basename(pathMvrcoJadiBot)}) conectado exitosamente.\n│\n❒⸺⸺⸺【• CONECTADO •】⸺⸺⸺❒`))
+        userJid = sock.authState.creds.me.jid || `${path.basename(pathOceanJadiBot)}@s.whatsapp.net`
+        console.log(chalk.bold.cyanBright(`\n❒⸺⸺⸺⸺【• SUB-BOT •】⸺⸺⸺⸺❒\n│\n│ 🟢 ${userName} (+${path.basename(pathOceanJadiBot)}) conectado exitosamente.\n│\n❒⸺⸺⸺【• CONECTADO •】⸺⸺⸺❒`))
         sock.isInit = true
         global.conns.push(sock)
         await joinChannels(sock)
