@@ -7,8 +7,8 @@ const handler = async (m, { isOwner, isAdmin, conn, text, participants, args, co
     throw false;
   }
   const pesan = args.join` `;
-  const oi = `𝙀𝙏𝙄𝙌𝙐𝙀𝙏𝘼𝙎:* ${pesan}`;
-  let teks = `>ㅤㅤ⎈ : 𝙊𝘾𝙀𝘼𝙉 𝘾𝙊𝙍𝙋*\n     ┉┅━━━━━━━━━━┅┉ \n ${oi}\n\n`;
+  const oi = `𝙀𝙏𝙄𝙌𝙐𝙀𝙏𝘼𝙎: ${pesan}`;
+  let teks = `ㅤㅤ⎈ : 𝙊𝘾𝙀𝘼𝙉 𝘾𝙊𝙍𝙋\n     ┉┅━━━━━━━━━━┅┉ \n ${oi}\n\n`;
   for (const mem of participants) {
     teks += `🪷⋆༘   @${mem.id.split('@')[0]}\n`;
   }
@@ -17,7 +17,7 @@ const handler = async (m, { isOwner, isAdmin, conn, text, participants, args, co
 };
 handler.help = ['todos *<txt>*'];
 handler.tags = ['gc'];
-handler.command = /^(tagall1|t1|invocar1|marcar1|todos1|invocación1)$/i;
+handler.command = /^(tagall1|t1|todas|invocar1|marcar1|todos1|invocación1)$/i;
 handler.admin = true;
 handler.group = true;
 export default handler;
