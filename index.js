@@ -41,12 +41,12 @@ let { say } = cfonts
 
 console.log(chalk.bold.redBright(`\n💻 Iniciando Sistema...\n`))
 
-say('KILL\nSEXO', {
+say('Katty\nBot', {
   font: 'chrome',
   align: 'center',
   gradient: ['red', 'magenta']
 });
-say(`Sigueme en ig como @aure.vp`, {
+say(`Bot by Katty x Jota`, {
   font: 'console',
   align: 'center',
   gradient: ['red', 'magenta']
