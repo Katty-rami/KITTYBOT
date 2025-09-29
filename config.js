@@ -14,28 +14,29 @@ global.botNumber = '' //Ejemplo: 529861009341
 //─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 
 global.owner = [
-  ['529861009341', 'MvrcoSexo', true]
+  ['50661612780', 'Katty', true]
+  ['573155227977', 'Jota', true]
 ];
 
 //─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 
-global.mods = []
-global.suittag = ['529861009341']
+global.mods = ['573155227977']
+global.suittag = ['50661612780']
 global.prems = []
 
 //─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 
-global.namebot = 'MvrcoSexo'
-global.packname = 'KɪʟʟᴢN'
-global.botname = '@𝖎𝖓𝖊𝖋𝖋𝖆𝖇𝖑𝖊.𝖒𝖛𝖗𝖈𝖔'
-global.wm = '𝙺𝙸𝙻𝙻 𝙱𝙾𝚃'
-global.author = '@𝖎𝖓𝖊𝖋𝖋𝖆𝖇𝖑𝖊.𝖒𝖛𝖗𝖈𝖔'
-global.dev = 'KɪʟʟᴢN'
-global.club = 'Mᴠʀᴄᴏ Sᴇxᴏ'
-global.textbot = 'Mᴠʀᴄᴏ Sᴇxᴏ'
-global.etiqueta = '@𝖎𝖓𝖊𝖋𝖋𝖆𝖇𝖑𝖊.𝖒𝖛𝖗𝖈𝖔'
+global.namebot = 'KattyBot'
+global.packname = 'Katty'
+global.botname = 'KattyBpt'
+global.wm = 'Katty Bot'
+global.author = 'KATTY BOT'
+global.dev = 'Katty x Jotaa.hrz'
+global.club = 'Katty'
+global.textbot = 'KattyBot'
+global.etiqueta = 'Katty Bot'
 global.jadi = 'JadiBots'
-global.sessions = 'OceanSession'
+global.sessions = 'KattySession'
 
 //─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 
@@ -65,11 +66,11 @@ global.xreg = '🪴'
 
 //─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 
-global.github = 'https://github.com/KillzN/MvrcoSexo'
-global.grupo = 'https://chat.whatsapp.com/HqhAoXS8TCcJIn0KrbJZKz'
-global.comu = 'https://chat.whatsapp.com/Ehs4pdSEW4o9ub8G3SPVaT'
-global.channel = 'https://www.whatsapp.com/channel/0029Vb4TKBCD38CNEkfHdj1z'
-global.ig = 'https://www.instagram.com/aure.vp'
+global.github = 
+global.grupo = 
+global.comu = 
+global.channel = 
+global.ig = 
 
 //─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─
 
